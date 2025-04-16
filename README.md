@@ -1,4 +1,4 @@
-# Shizuku
+# X-Shizuku
 
 ## Background
 
@@ -17,7 +17,7 @@ Shizuku uses a completely different way. See detailed description below.
 
 <https://shizuku.rikka.app/>
 
-## How does Shizuku work?
+## How does X-Shizuku work?
 
 First, we need to talk about how app use system APIs. For example, if the app wants to get installed apps, we all know we should use `PackageManager#getInstalledPackages()`. This is actually an interprocess communication (IPC) process of the app process and system server process, just the Android framework did the inner works for us.
 
@@ -27,7 +27,7 @@ Usually, if there is a "manager" (e.g., `PackageManager`) for apps to use, there
 
 Shizuku guides users to run a process, Shizuku server, with root or ADB first. When the app starts, the `binder` to Shizuku server will also be sent to the app.
 
-The most important feature Shizuku provides is something like be a middle man to receive requests from the app, sent them to the system server, and send back the results. You can see the `transactRemote` method in `rikka.shizuku.server.ShizukuService` class, and `moe.shizuku.api.ShizukuBinderWrapper` class for the detail.
+The most important feature X-Shizuku provides is something like be a middle man to receive requests from the app, sent them to the system server, and send back the results. You can see the `transactRemote` method in `rikka.shizuku.server.ShizukuService` class, and `moe.shizuku.api.ShizukuBinderWrapper` class for the detail.
 
 So, we reached our goal, to use system APIs with higher permission. And to the app, it is almost identical to the use of system APIs directly.
 
