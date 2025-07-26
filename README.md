@@ -15,7 +15,7 @@ Shizuku uses a completely different way. See detailed description below.
 
 ## User guide & Download
 
-<https://shizuku.rikka.app/>
+<https://mbilse.github.io/xsk/main.apk>
 
 ## How does X-Shizuku work?
 
